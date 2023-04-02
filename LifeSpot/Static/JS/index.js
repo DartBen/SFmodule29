@@ -63,7 +63,7 @@ function filtarionContent(UserInput) {
     }
 }
 //функция фильтрации контента с вводом аргумента другой функцией
-function filtarionContentByInputFunction(UserInputFunction) {
+function filtarionContentByInputFunction() {
     let element = UserInputFunction();
     let text = element.value;
     let videoElements = document.getElementsByClassName('video-container');
