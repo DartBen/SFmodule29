@@ -10,6 +10,7 @@
         alert(a);
     </script>-->
     <script src="../Static/JS/index.js"></script>
+    <!-- <script defer>sessionInfo(); </script>-->
 </head>
 <body>
     <header id="header-index">
@@ -31,22 +32,7 @@
         <!--Параграф-->
         <p>
             <b>Поле поиска:</b><br>
-            <input type="text" oninput="
-                   let elements=document.getElementsByTagName('input');
-                   let element=elements[0];
-                   let text=element.value;
-                   let videoElements=document.getElementsByClassName('video-container');
-                   for (let i=0; i < videoElements.length; i++) {
-                        let videoElement = videoElements[i];
-                        let videoElementName = videoElement.getElementsByTagName('h3')[0].innerText;
-                        let videoElementNameLowerCase = videoElementName.toLowerCase();
-                        if (!videoElementNameLowerCase.includes(text.toLowerCase())){
-                               videoElements[i].style.display = 'none';
-                           } else {
-                               videoElements[i].style.display = 'inline-block';
-                           }
-                   }
-            " size=50%>
+            <input type="text" oninput=" filtarionContent();" size=50%>
         </p>
 
         <div class="video-container">
