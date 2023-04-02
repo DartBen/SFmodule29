@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="959c1069-c85c-46d5-b6a0-d65d70eb5668" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LifeSpot/Static/JS/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/LifeSpot/Static/JS/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LifeSpot/Views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/LifeSpot/Views/index.html" afterDir="false" />
     </list>

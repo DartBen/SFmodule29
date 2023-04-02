@@ -62,4 +62,22 @@ function filtarionContent(UserInput) {
         else {videoElements[i].style.display = 'inline-block'; }
     }
 }
+//функция фильтрации контента с вводом аргумента другой функцией
+function filtarionContentByInputFunction(UserInputFunction) {
+    let element = UserInputFunction();
+    let text = element.value;
+    let videoElements = document.getElementsByClassName('video-container');
+    for (let i=0; i < videoElements.length; i++) {
+        let videoElement = videoElements[i];
+        let videoElementName = videoElement.getElementsByTagName('h3')[0].innerText;
+        let videoElementNameLowerCase = videoElementName.toLowerCase();
+        if (!videoElementNameLowerCase.includes(text.toLowerCase())){videoElements[i].style.display = 'none';}
+       else {videoElements[i].style.display = 'inline-block'; }
+    }
+}
+let UserInputFunction = function UserInputFunction(){
+    return document.getElementsByTagName('input')[0];
+}
+
+
 

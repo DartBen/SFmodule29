@@ -33,7 +33,10 @@
         <!--Параграф-->
         <p>
             <b>Поле поиска:</b><br>
-            <input type="text" oninput=" filtarionContent(document.getElementsByTagName('input'));" size=50%>
+            <input type="text" oninput="
+            //filtarionContent(document.getElementsByTagName('input'));
+            filtarionContentByInputFunction(UserInputFunction);
+            " size=50%>
         </p>
 
         <div class="video-container">
