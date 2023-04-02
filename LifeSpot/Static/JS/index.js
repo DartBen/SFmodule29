@@ -38,20 +38,15 @@ let sessionHandler = function handleSession(){
     for (let result of session){
         console.log(result)
     }
-    {window.location.href = "http://www.google.com"}
-
-for (let result of session){
-    console.log(result)
-}
 }
 
 
 //функция фильтрации контента
-let filtarionContent = function filtarionContent() {
-    let elements=document.getElementsByTagName('input');
-    let element=elements[0];
-    let text=element.value;
-    let videoElements=document.getElementsByClassName('video-container');
+function filtarionContent(UserInput) {
+    let elements = UserInput;
+    let element = elements[0];
+    let text = element.value;
+    let videoElements = document.getElementsByClassName('video-container');
     for (let i=0; i < videoElements.length; i++) {
         let videoElement = videoElements[i];
         let videoElementName = videoElement.getElementsByTagName('h3')[0].innerText;
