@@ -83,7 +83,7 @@ let UserInputFunction = function UserInputFunction(){
 }
 
 function instagramSubscribe() {
-    alert("Подпишитесь на наш Инстаграмм (рапрещенно на территории РФ и вообще не по православному)")
+    alert("Подпишитесь на наш Инстаграмм (запрещенно на территории РФ и вообще не по православному)")
 }
 
 

@@ -14,8 +14,6 @@ function addReview() {
 }
 
 const postComment = review => {
-    console.log(review);
-
     document.getElementsByClassName('reviews')[0].innerHTML +=
         '<div class="review-text">\n' +
             `<p> <i> <b>${review.get("name")}</b>  ${review.get("date")}</i></p>` +
