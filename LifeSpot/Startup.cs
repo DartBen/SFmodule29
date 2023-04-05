@@ -21,7 +21,7 @@ namespace LifeSpot
 
             app.UseRouting();
 
-            // Загружаем отдельные элементы для вставки в шаблон: боковое меню и футер
+            // Р—Р°РіСЂСѓР¶Р°РµРј РѕС‚РґРµР»СЊРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ РґР»СЏ РІСЃС‚Р°РІРєРё РІ С€Р°Р±Р»РѕРЅ: Р±РѕРєРѕРІРѕРµ РјРµРЅСЋ Рё С„СѓС‚РµСЂ
             string footerHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "footer.html"));
             string sideBarHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "sideBar.html"));
 
@@ -31,7 +31,7 @@ namespace LifeSpot
                 {
                     var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "index.html");
 
-                    // Загружаем шаблон страницы, вставляя в него элементы
+                    // Р—Р°РіСЂСѓР¶Р°РµРј С€Р°Р±Р»РѕРЅ СЃС‚СЂР°РЅРёС†С‹, РІСЃС‚Р°РІР»СЏСЏ РІ РЅРµРіРѕ СЌР»РµРјРµРЅС‚С‹
                     var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
                         .Replace("<!--SIDEBAR-->", sideBarHtml)
                         .Replace("<!--FOOTER-->", footerHtml);
@@ -43,7 +43,19 @@ namespace LifeSpot
                 {
                     var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "testing.html");
 
-                    // Загружаем шаблон страницы, вставляя в него элементы
+                    // Р—Р°РіСЂСѓР¶Р°РµРј С€Р°Р±Р»РѕРЅ СЃС‚СЂР°РЅРёС†С‹, РІСЃС‚Р°РІР»СЏСЏ РІ РЅРµРіРѕ СЌР»РµРјРµРЅС‚С‹
+                    var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
+                        .Replace("<!--SIDEBAR-->", sideBarHtml)
+                        .Replace("<!--FOOTER-->", footerHtml);
+
+                    await context.Response.WriteAsync(html.ToString());
+                });
+
+                endpoints.MapGet("/about", async context =>
+                {
+                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "about.html");
+
+                    // Р—Р°РіСЂСѓР¶Р°РµРј С€Р°Р±Р»РѕРЅ СЃС‚СЂР°РЅРёС†С‹, РІСЃС‚Р°РІР»СЏСЏ РІ РЅРµРіРѕ СЌР»РµРјРµРЅС‚С‹
                     var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
                         .Replace("<!--SIDEBAR-->", sideBarHtml)
                         .Replace("<!--FOOTER-->", footerHtml);
@@ -68,6 +80,13 @@ namespace LifeSpot
                 endpoints.MapGet("/Static/JS/testing.js", async context =>
                 {
                     var jsPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "JS", "testing.js");
+                    var js = await File.ReadAllTextAsync(jsPath);
+                    await context.Response.WriteAsync(js);
+                });
+
+                endpoints.MapGet("/Static/JS/about.js", async context =>
+                {
+                    var jsPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "JS", "about.js");
                     var js = await File.ReadAllTextAsync(jsPath);
                     await context.Response.WriteAsync(js);
                 });
