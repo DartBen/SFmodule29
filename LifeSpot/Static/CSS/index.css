@@ -73,10 +73,8 @@ header, footer, body, .video-container {
     color: blue;
 }
 
-#Reviews-button{
+.Reviews-button{
     display: inline-block;
     margin-top: 0.5em;
-    padding-left: 1%;
-    padding-top: 1%;
-    color: crimson;
+    padding: 10px;
 }
