@@ -78,3 +78,12 @@ header, footer, body, .video-container {
     margin-top: 0.5em;
     padding: 10px;
 }
+
+.review-text{
+    display: block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}

@@ -1,13 +1,24 @@
-let session =  new Map();
 
-function sessionInfo() {
-    session.set("age", prompt("Пожалуйста, введите ваш возраст/"));
-    session.set("comment", prompt("Введите коментарий"));
-    console.log(session.get("age"));
-    console.log(session.get("comment"));
+
+function addReview() {
+    let review =  new Map();
+    review.set("name", prompt("Пожалуйста, введите ваше имя"));
+    review.set("comment", prompt("Введите коментарий"));
+    review.set("date", new Date().toLocaleString());
+    if ((review.get("name") == null) || (review.get("comment") == null)
+        || review.get("name") == ""  || review.get("comment")=="")
+    {
+        return ;
+    }
+    postComment(review);
 }
 
-const postComment = sesion => {
-    console.log(sesion.get("age"));
-    console.log(sesion.get("comment"));
+const postComment = review => {
+    console.log(review);
+
+    document.getElementsByClassName('reviews')[0].innerHTML +=
+        '<div class="review-text">\n' +
+            `<p> <i> <b>${review.get("name")}</b>  ${review.get("date")}</i></p>` +
+            `<p>${review.get("comment")}</p>`  +
+        '</div>';
 }
